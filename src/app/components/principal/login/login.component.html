@@ -1,0 +1,38 @@
+<div class="sectionIntroduction">
+  <div class="picturePricipal">
+    <img class="geometric" src="/assets/images/pictureLog.png" />
+  </div>
+  <section class="introduction">
+    <h1>Iniciar sesion</h1>
+    <div class="form-floating margin">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@example.com"
+      />
+      <label for="floatingInput">Usuario</label>
+    </div>
+    <div class="form-floating margin">
+      <input
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Password"
+      />
+      <label for="floatingPassword">Constraseña</label>
+    </div>
+    <select class="form-select margin" aria-label="Default select example">
+      <option selected>Seleccione su Rol</option>
+      <option value="1">Estudiante</option>
+      <option value="2">Docente</option>
+      <option value="3">Comite</option>
+    </select>
+    <button type="button" class="btn btn-secondary" (click)="principal()">
+      Regresar
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="verifyUser()">
+      Ingresar
+    </button>
+  </section>
+</div>

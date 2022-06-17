@@ -1,0 +1,29 @@
+@import "../../../../utilities";
+
+.containerPrincipal {
+  margin: 20px 5%;
+}
+
+.sectionIntroduction {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 50% 1fr;
+}
+.introduction {
+  margin: 20px 12%;
+}
+.picturePrincipal .geometric {
+  grid-column: 2;
+}
+
+.btn {
+  background-color: $darkBlue;
+  border-color: $darkBlue;
+  border-radius: 20px;
+  box-shadow: none;
+  width: 8rem;
+}
+
+p {
+  margin-top: 20px;
+}

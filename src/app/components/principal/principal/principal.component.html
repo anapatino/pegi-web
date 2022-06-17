@@ -1,1 +1,48 @@
-<p>principal works!</p>
+<div class="containerPrincipal">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">Pegi</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse flex-row-reverse"
+        id="navbarNavAltMarkup"
+      >
+        <div class="navbar-nav">
+          <a class="nav-link active" [routerLink]="['/login']"
+            >Iniciar Sesion</a
+          >
+          <a class="nav-link" aria-current="page" [routerLink]="['/']"
+            >Soporte</a
+          >
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="sectionIntroduction">
+  <section class="introduction">
+    <h1>Ahora ya puedes olvidarte para siempre de los metodos tradionales.</h1>
+    <p>
+      Pegi es una aplicación web que permite administrar, almacenar, acceder a
+      la información de manera instantánea, ejercer el control y registrar los
+      diversos proyectos de investigación que realiza la comunidad
+      universitaria.
+    </p>
+    <button type="button" class="btn btn-secondary" (click)="login()">
+      Ingresar
+    </button>
+  </section>
+  <div class="picturePricipal">
+    <img class="geometric" src="/assets/images/principal.png" />
+  </div>
+</div>
