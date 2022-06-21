@@ -1,0 +1,43 @@
+@import "../../../../utilities.scss";
+
+.dashboard {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 20% 1fr;
+}
+.navegation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8%;
+}
+
+.logo {
+  margin-bottom: 5px;
+}
+.nav-link {
+  color: black;
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+.nav-link:hover {
+  color: $lightBlue;
+}
+.bi {
+  margin-right: 10px;
+}
+.userControl {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.iconUser {
+  margin: 10px;
+}
+
+.childContainer {
+  padding: 5% 5% 0;
+}
