@@ -26,11 +26,60 @@ const TREE_DATA: ItemNode[] = [
     label: 'Perfil',
     children: [
       {
-        label: 'registrar cv',
+        label: 'Registrar cv',
         route: 'registerCv',
       },
       {
-        label: 'consultar cv',
+        label: 'Consultar cv',
+        route: 'searchCv',
+      },
+    ],
+  },
+  {
+    icon: 'clipboard-fill',
+    label: 'Propuesta',
+    children: [
+      {
+        label: 'Registrar Propuesta',
+      },
+      {
+        label: 'Consultar Estado',
+      },
+      {
+        label: 'Listado de Propuestas',
+      },
+    ],
+  },
+  {
+    icon: 'stack',
+    label: 'Proyecto',
+    children: [
+      {
+        label: 'Registrar Proyecto',
+      },
+      {
+        label: 'Consultar Estado',
+      },
+      {
+        label: 'Listado de Proyectos',
+      },
+    ],
+  },
+  {
+    icon: 'people-fill',
+    label: 'Asesores',
+    children: [
+      {
+        label: 'Consultar Tutores',
+      },
+    ],
+  },
+  {
+    icon: 'text-left',
+    label: 'Lineas de Investigacion',
+    children: [
+      {
+        label: 'Consultar Lineas',
       },
     ],
   },
