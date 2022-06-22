@@ -1,0 +1,27 @@
+<div>
+  <h3>Registrar Propuesta</h3>
+</div>
+<mat-stepper #stepper>
+  <mat-step
+    [stepControl]="generalInformationFormGroup"
+    errorMessage="Datos generales Incompletos."
+  >
+    <form [formGroup]="generalInformationFormGroup">
+      <ng-template matStepLabel>Informacion General</ng-template>
+      <p>Informacion General de la propuesta</p>
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha</mat-label>
+        <input matInput [matDatepicker]="startDate" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="startDate"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #startDate></mat-datepicker>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-stepper>

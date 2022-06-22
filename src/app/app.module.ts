@@ -15,6 +15,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { RegisterProposalComponent } from './components/dashboard/proposal/register-proposal/register-proposal.component';
+import { SearchProposalComponent } from './components/dashboard/proposal/search-proposal/search-proposal.component';
+import { ProposalListComponent } from './components/dashboard/proposal/proposal-list/proposal-list.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +30,9 @@ import { MatButtonModule } from '@angular/material/button';
     LoginComponent,
     RegisterCvComponent,
     SearchCvComponent,
+    RegisterProposalComponent,
+    SearchProposalComponent,
+    ProposalListComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,8 +45,11 @@ import { MatButtonModule } from '@angular/material/button';
     MatTreeModule,
     MatIconModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
   ],
-  providers: [],
+  providers: [MatNativeDateModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

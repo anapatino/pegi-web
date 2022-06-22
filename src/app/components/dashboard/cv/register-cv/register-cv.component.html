@@ -13,12 +13,7 @@
       </mat-form-field>
       <mat-form-field appearance="fill" class="containerInputs">
         <mat-label>Segundo Nombre</mat-label>
-        <input
-          matInput
-          placeholder="Segundo Nombre"
-          formControlName="firstCtrl"
-          required
-        />
+        <input matInput placeholder="Segundo Nombre" />
       </mat-form-field>
       <mat-form-field appearance="fill" class="containerInputs">
         <mat-label>Primer Apellido</mat-label>
@@ -31,12 +26,7 @@
       </mat-form-field>
       <mat-form-field appearance="fill" class="containerInputs">
         <mat-label>Segundo Apellido</mat-label>
-        <input
-          matInput
-          placeholder="Segundo Apellido"
-          formControlName="firstCtrl"
-          required
-        />
+        <input matInput placeholder="Segundo Apellido" />
       </mat-form-field>
       <mat-form-field appearance="fill" class="containerInputs">
         <mat-label>Documento</mat-label>
@@ -44,33 +34,39 @@
       </mat-form-field>
       <mat-form-field appearance="fill" class="containerInputs">
         <mat-label>Estado Civil</mat-label>
-        <input
-          matInput
-          placeholder="Estado Civil"
-          formControlName="firstCtrl"
-          required
-        />
+        <mat-select [formControl]="civilControl" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let civil of civils" [value]="civil">
+            {{ civil.name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="civilControl.hasError('required')"
+          >Elige una Opcion</mat-error
+        >
       </mat-form-field>
       <mat-form-field appearance="fill" class="containerInputs">
         <mat-label>Sexo</mat-label>
-        <input
-          matInput
-          placeholder="Sexo"
-          formControlName="firstCtrl"
-          required
-        />
+        <mat-select [formControl]="sexControl" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let sex of sexs" [value]="sex">
+            {{ sex.name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="sexControl.hasError('required')"
+          >Elige una Opcion</mat-error
+        >
       </mat-form-field>
-      <mat-form-field appearance="fill" class="containerInputs">
+      <mat-form-field appearance="fill">
         <mat-label>Fecha Nacimiento</mat-label>
-        <input
-          matInput
-          placeholder=""
-          Fecha
-          Nacimiento
-          formControlName="firstCtrl"
-          required
-        />
+        <input matInput [matDatepicker]="dateBirth" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="dateBirth"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #dateBirth></mat-datepicker>
       </mat-form-field>
+
       <mat-form-field appearance="fill" class="containerInputs">
         <mat-label>Pais</mat-label>
         <input
@@ -117,36 +113,129 @@
         />
       </mat-form-field>
       <div class="information">
-        <p>Ingresa los datos requeridos.</p>
         <button mat-button matStepperNext>Siguiente</button>
       </div>
     </form>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup" errorMessage="Datos Incompletos">
     <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Estudios Secundarios</ng-template>
+      <ng-template matStepLabel>Estudios</ng-template>
+      <p>Estudios Secundarios</p>
+      <mat-form-field appearance="fill" class="containerInputs">
+        <mat-label>Ins.Educativa</mat-label>
+        <input matInput placeholder="" formControlName="secondCtrl" required />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="containerInputs">
+        <mat-label>Ciudad</mat-label>
+        <input matInput placeholder="" formControlName="secondCtrl" required />
+      </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Address</mat-label>
-        <input
-          matInput
-          placeholder="Ex. 1 Main St, New York, NY"
-          formControlName="secondCtrl"
-          required
-        />
+        <mat-label>Finalizacion</mat-label>
+        <input matInput [matDatepicker]="endDateSecundary" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="endDateSecundary"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #endDateSecundary></mat-datepicker>
+      </mat-form-field>
+      <p>Estudios Universitarios</p>
+      <mat-form-field appearance="fill" class="containerInputs">
+        <mat-label>Institucion Superior</mat-label>
+        <input matInput placeholder="" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="containerInputs">
+        <mat-label>Ciudad</mat-label>
+        <input matInput placeholder="" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Finalizacion</mat-label>
+        <input matInput [matDatepicker]="endDateSuperior" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="endDateSuperior"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #endDateSuperior></mat-datepicker>
       </mat-form-field>
       <div>
-        <p>Go to a different step to see the error state</p>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperPrevious>Anterior</button>
+        <button mat-button matStepperNext>Siguiente</button>
       </div>
     </form>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
+    <form>
+      <ng-template matStepLabel>Estudios Adicionales</ng-template>
+      <p>Estudios Postgrado</p>
+      <mat-form-field appearance="fill" class="containerInputs">
+        <mat-label>Institucion Superior</mat-label>
+        <input matInput placeholder="" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="containerInputs">
+        <mat-label>Ciudad</mat-label>
+        <input matInput placeholder="" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Finalizacion</mat-label>
+        <input matInput [matDatepicker]="endDatePostgraduate" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="endDatePostgraduate"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #endDatePostgraduate></mat-datepicker>
+      </mat-form-field>
+      <p>Experiencia Profesional</p>
+      <mat-form-field appearance="fill" class="containerInputs">
+        <mat-label>Institucion Superior</mat-label>
+        <input matInput placeholder="" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="containerInputs">
+        <mat-label>Ciudad</mat-label>
+        <input matInput placeholder="" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Finalizacion</mat-label>
+        <input matInput [matDatepicker]="endDateProfessional" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="endDateProfessional"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #endDateProfessional></mat-datepicker>
+      </mat-form-field>
+      <p>Experiencia Docente</p>
+      <mat-form-field appearance="fill" class="containerInputs">
+        <mat-label>Institucion Superior</mat-label>
+        <input matInput placeholder="" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="containerInputs">
+        <mat-label>Ciudad</mat-label>
+        <input matInput placeholder="" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Finalizacion</mat-label>
+        <input matInput [matDatepicker]="endDateExperience" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="endDateExperience"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #endDateExperience></mat-datepicker>
+      </mat-form-field>
+      <div class="information">
+        <button mat-button matStepperPrevious>Anterior</button>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Finalizar</ng-template>
+    <div class="information">
+      <p>Haz finalizado el registro Correctamente.</p>
+      <button mat-button matStepperPrevious>Anterior</button>
+      <button mat-button>Finalizar</button>
     </div>
   </mat-step>
 </mat-stepper>

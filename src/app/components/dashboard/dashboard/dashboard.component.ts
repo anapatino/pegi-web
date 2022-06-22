@@ -41,12 +41,15 @@ const TREE_DATA: ItemNode[] = [
     children: [
       {
         label: 'Registrar Propuesta',
+        route: 'registerProposal',
       },
       {
         label: 'Consultar Estado',
+        route: 'searchProposal',
       },
       {
         label: 'Listado de Propuestas',
+        route: 'proposalList',
       },
     ],
   },

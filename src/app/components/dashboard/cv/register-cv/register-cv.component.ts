@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+
+interface Civil {
+  name: string;
+}
+
+interface Sex {
+  name: string;
+}
 
 @Component({
   selector: 'app-register-cv',
@@ -21,6 +29,22 @@ export class RegisterCvComponent implements OnInit {
     secondCtrl: ['', Validators.required],
   });
 
+  civilControl = new FormControl<Civil | null>(null, Validators.required);
+  selectFormControl = new FormControl('', Validators.required);
+  civils: Civil[] = [
+    { name: 'Soltero/a' },
+    { name: 'Casado/a' },
+    { name: 'Viudo/a' },
+    { name: 'Union Libre' },
+  ];
+
+  sexControl = new FormControl<Sex | null>(null, Validators.required);
+  selecFormControl = new FormControl('', Validators.required);
+  sexs: Sex[] = [
+    { name: 'Femenino' },
+    { name: 'Masculino' },
+    { name: 'Sin Especificar' },
+  ];
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit(): void {}
