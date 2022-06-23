@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterCvComponent } from '../register-cv/register-cv.component';
+import { RegisterCvComponent } from '../registerCv/register-cv/register-cv.component';
 
 @Component({
   selector: 'app-search-cv',

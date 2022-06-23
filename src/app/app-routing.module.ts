@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegisterCvComponent } from './components/dashboard/cv/register-cv/register-cv.component';
+import { RegisterCvComponent } from './components/dashboard/cv/registerCv/register-cv/register-cv.component';
 import { SearchCvComponent } from './components/dashboard/cv/search-cv/search-cv.component';
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 import { ProposalListComponent } from './components/dashboard/proposal/proposal-list/proposal-list.component';

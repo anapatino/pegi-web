@@ -6,7 +6,7 @@ import { PrincipalComponent } from './components/principal/principal/principal.c
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 import { LoginComponent } from './components/principal/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegisterCvComponent } from './components/dashboard/cv/register-cv/register-cv.component';
+import { RegisterCvComponent } from './components/dashboard/cv/registerCv/register-cv/register-cv.component';
 import { SearchCvComponent } from './components/dashboard/cv/search-cv/search-cv.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -21,6 +21,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { RegisterProposalComponent } from './components/dashboard/proposal/register-proposal/register-proposal.component';
 import { SearchProposalComponent } from './components/dashboard/proposal/search-proposal/search-proposal.component';
 import { ProposalListComponent } from './components/dashboard/proposal/proposal-list/proposal-list.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { PersonalInformationComponent } from './components/dashboard/cv/registerCv/personal-information/personal-information.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import { ProposalListComponent } from './components/dashboard/proposal/proposal-
     RegisterProposalComponent,
     SearchProposalComponent,
     ProposalListComponent,
+    PersonalInformationComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,8 @@ import { ProposalListComponent } from './components/dashboard/proposal/proposal-
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [MatNativeDateModule],
   bootstrap: [AppComponent],
