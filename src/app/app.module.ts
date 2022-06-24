@@ -20,7 +20,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { RegisterProposalComponent } from './components/dashboard/proposal/registerProposal/register-proposal/register-proposal.component';
 import { SearchProposalComponent } from './components/dashboard/proposal/search-proposal/search-proposal.component';
-import { ProposalListComponent } from './components/dashboard/proposal/proposal-list/proposal-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { PersonalInformationComponent } from './components/dashboard/cv/registerCv/personal-information/personal-information.component';
@@ -43,7 +42,6 @@ import { BibliographyComponent } from './components/dashboard/proposal/registerP
     SearchCvComponent,
     RegisterProposalComponent,
     SearchProposalComponent,
-    ProposalListComponent,
     PersonalInformationComponent,
     EducationComponent,
     AdditionalEducationComponent,

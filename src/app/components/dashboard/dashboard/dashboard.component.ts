@@ -44,12 +44,8 @@ const TREE_DATA: ItemNode[] = [
         route: 'registerProposal',
       },
       {
-        label: 'Consultar Estado',
-        route: 'searchProposal',
-      },
-      {
         label: 'Listado de Propuestas',
-        route: 'proposalList',
+        route: 'searchProposal',
       },
     ],
   },
