@@ -57,9 +57,6 @@ const TREE_DATA: ItemNode[] = [
         label: 'Registrar Proyecto',
       },
       {
-        label: 'Consultar Estado',
-      },
-      {
         label: 'Listado de Proyectos',
       },
     ],
