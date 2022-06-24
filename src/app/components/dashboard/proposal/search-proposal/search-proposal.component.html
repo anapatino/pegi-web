@@ -1,9 +1,9 @@
+<h4 class="titleSearch">Consultar Propuesta</h4>
+<mat-form-field appearance="standard" class="filter">
+  <mat-label>Filtrar</mat-label>
+  <input matInput placeholder="Ingrese el titulo de su propuesta" #input />
+</mat-form-field>
 <div class="containerSearch">
-  <h4 class="titleSearch">Consultar Propuesta</h4>
-  <mat-form-field appearance="standard" class="filter">
-    <mat-label>Filtrar</mat-label>
-    <input matInput placeholder="Ingrese el titulo de su propuesta" #input />
-  </mat-form-field>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
     <!-- Position Column -->
     <ng-container matColumnDef="position">
