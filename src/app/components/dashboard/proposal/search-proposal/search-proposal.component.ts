@@ -5,6 +5,7 @@ export interface proposals {
   position: number;
   status: string;
   score: number;
+  feedback: string;
 }
 
 const ELEMENT_DATA: proposals[] = [
@@ -13,11 +14,30 @@ const ELEMENT_DATA: proposals[] = [
     name: 'Investigacion de Grillos',
     status: 'pendiente',
     score: 0,
+    feedback: '',
   },
-  { position: 2, name: 'Helium', status: 'pendiente', score: 0 },
-  { position: 3, name: 'Lithium', status: 'calificada con arreglos', score: 4 },
-  { position: 4, name: 'Beryllium', status: 'pendiente', score: 0 },
-  { position: 5, name: 'Boron', status: 'calificada', score: 3.7 },
+  { position: 2, name: 'Helium', status: 'pendiente', score: 0, feedback: '-' },
+  {
+    position: 3,
+    name: 'Lithium',
+    status: 'calificada con arreglos',
+    score: 4,
+    feedback: 'ver',
+  },
+  {
+    position: 4,
+    name: 'Beryllium',
+    status: 'pendiente',
+    score: 0,
+    feedback: '-',
+  },
+  {
+    position: 5,
+    name: 'Boron',
+    status: 'calificada',
+    score: 3.7,
+    feedback: 'ver',
+  },
 ];
 
 @Component({
@@ -26,7 +46,13 @@ const ELEMENT_DATA: proposals[] = [
   styleUrls: ['./search-proposal.component.scss'],
 })
 export class SearchProposalComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'status', 'score'];
+  displayedColumns: string[] = [
+    'position',
+    'name',
+    'status',
+    'score',
+    'feedback',
+  ];
   dataSource = ELEMENT_DATA;
 
   constructor() {}
