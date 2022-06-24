@@ -1,0 +1,14 @@
+<form [formGroup]="bibliographyFormGroup">
+  <mat-form-field class="container" appearance="fill">
+    <mat-label>Bibliografia</mat-label>
+    <textarea
+      matInput
+      placeholder="Ingrese Bibliografias"
+      formControlName="bibliographyCtrl"
+    ></textarea>
+  </mat-form-field>
+  <div>
+    <button mat-button matStepperPrevious>Anterior</button>
+    <button mat-button matStepperNext>Siguiente</button>
+  </div>
+</form>

@@ -1,0 +1,24 @@
+<form [formGroup]="problemStatementFormGroup">
+  <p>Planteamiento del Problema</p>
+  <mat-form-field class="container" appearance="fill">
+    <mat-label>Planteamiento</mat-label>
+    <textarea
+      matInput
+      placeholder="Argumente "
+      formControlName="problemCtrl"
+    ></textarea>
+  </mat-form-field>
+  <p>Formulacion del Problema</p>
+  <mat-form-field class="container" appearance="fill">
+    <mat-label>Formulacion</mat-label>
+    <textarea
+      matInput
+      placeholder="Formule"
+      formControlName="problemCtrl"
+    ></textarea>
+  </mat-form-field>
+  <div>
+    <button mat-button matStepperPrevious>Anterior</button>
+    <button mat-button matStepperNext>Siguiente</button>
+  </div>
+</form>

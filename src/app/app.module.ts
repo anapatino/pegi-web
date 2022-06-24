@@ -18,7 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
-import { RegisterProposalComponent } from './components/dashboard/proposal/register-proposal/register-proposal.component';
+import { RegisterProposalComponent } from './components/dashboard/proposal/registerProposal/register-proposal/register-proposal.component';
 import { SearchProposalComponent } from './components/dashboard/proposal/search-proposal/search-proposal.component';
 import { ProposalListComponent } from './components/dashboard/proposal/proposal-list/proposal-list.component';
 import { MatTableModule } from '@angular/material/table';
@@ -26,6 +26,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { PersonalInformationComponent } from './components/dashboard/cv/registerCv/personal-information/personal-information.component';
 import { EducationComponent } from './components/dashboard/cv/registerCv/education/education.component';
 import { AdditionalEducationComponent } from './components/dashboard/cv/registerCv/additional-education/additional-education.component';
+import { GeneralInformationComponent } from './components/dashboard/proposal/registerProposal/general-information/general-information.component';
+import { SpecificInformationComponent } from './components/dashboard/proposal/registerProposal/specific-information/specific-information.component';
+import { ApproachComponent } from './components/dashboard/proposal/registerProposal/approach/approach.component';
+import { JustificationComponent } from './components/dashboard/proposal/registerProposal/justification/justification.component';
+import { ObjectivesComponent } from './components/dashboard/proposal/registerProposal/objectives/objectives.component';
+import { BibliographyComponent } from './components/dashboard/proposal/registerProposal/bibliography/bibliography.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +47,12 @@ import { AdditionalEducationComponent } from './components/dashboard/cv/register
     PersonalInformationComponent,
     EducationComponent,
     AdditionalEducationComponent,
+    GeneralInformationComponent,
+    SpecificInformationComponent,
+    ApproachComponent,
+    JustificationComponent,
+    ObjectivesComponent,
+    BibliographyComponent,
   ],
   imports: [
     BrowserModule,

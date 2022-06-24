@@ -1,0 +1,18 @@
+<form [formGroup]="objectivesFormGroup">
+  <mat-form-field appearance="fill" class="titleProposal">
+    <mat-label> Objetivo General</mat-label>
+    <input matInput placeholder="" formControlName="objectivesCtrl" required />
+  </mat-form-field>
+  <mat-form-field class="container" appearance="fill">
+    <mat-label>Objetivos Especificos</mat-label>
+    <textarea
+      matInput
+      placeholder=""
+      formControlName="objectivesCtrl"
+    ></textarea>
+  </mat-form-field>
+  <div>
+    <button mat-button matStepperPrevious>Anterior</button>
+    <button mat-button matStepperNext>Siguiente</button>
+  </div>
+</form>

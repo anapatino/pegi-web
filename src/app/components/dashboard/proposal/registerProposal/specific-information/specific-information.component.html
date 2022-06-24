@@ -1,0 +1,23 @@
+<form [formGroup]="specificInformationFormGroup">
+  <p>Informacion Especifica de la Propuesta</p>
+  <mat-form-field appearance="fill" class="mediumContainer">
+    <mat-label>Linea de Investigacion</mat-label>
+    <input matInput placeholder="" formControlName="specifiCtrl" required />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="mediumContainer">
+    <mat-label>Sublinea Investigacion</mat-label>
+    <input matInput placeholder="" formControlName="specifiCtrl" required />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="mediumContainer">
+    <mat-label>Areas Tematicas</mat-label>
+    <input matInput placeholder="" formControlName="specifiCtrl" required />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="mediumContainer">
+    <mat-label>Grupos de Investigacion</mat-label>
+    <input matInput placeholder="" formControlName="specifiCtrl" required />
+  </mat-form-field>
+  <div>
+    <button mat-button matStepperPrevious>Anterior</button>
+    <button mat-button matStepperNext>Siguiente</button>
+  </div>
+</form>

@@ -1,0 +1,14 @@
+<form [formGroup]="justificationFormGroup">
+  <mat-form-field class="container" appearance="fill">
+    <mat-label>Justificacion</mat-label>
+    <textarea
+      matInput
+      placeholder=""
+      formControlName="justificationCtrl"
+    ></textarea>
+  </mat-form-field>
+  <div>
+    <button mat-button matStepperPrevious>Anterior</button>
+    <button mat-button matStepperNext>Siguiente</button>
+  </div>
+</form>

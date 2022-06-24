@@ -1,0 +1,214 @@
+<form [formGroup]="generalInformationFormGroup">
+  <p>Informacion General de la propuesta</p>
+  <mat-form-field appearance="fill" class="titleProposal">
+    <mat-label>Titulo</mat-label>
+    <input
+      matInput
+      placeholder="Titulo de la Propuesta"
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Fecha</mat-label>
+    <input matInput [matDatepicker]="startDate" />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+    <mat-datepicker #startDate></mat-datepicker>
+  </mat-form-field>
+  <p>Integrantes de la propuesta</p>
+  <mat-form-field appearance="fill" class="mediumContainer">
+    <mat-label>Nombre Completo</mat-label>
+    <input
+      matInput
+      placeholder="Nombres y Apellidos"
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Identificacion</mat-label>
+    <mat-select [formControl]="idControl" required>
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let id of ids" [value]="id">
+        {{ id.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="idControl.hasError('required')"
+      >Elige una Opcion</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Documento</mat-label>
+    <input matInput placeholder="" formControlName="generalCtrl" required />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="mediumContainer">
+    <mat-label>Programa Academico</mat-label>
+    <input
+      matInput
+      placeholder="programa inscrito"
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Nro Creditos Academicos</mat-label>
+    <input
+      type="number"
+      matInput
+      placeholder=""
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="mediumContainer">
+    <mat-label>Correo</mat-label>
+    <input
+      type="email"
+      matInput
+      placeholder="@unicesar.edu.co"
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Telefono</mat-label>
+    <input
+      matInput
+      placeholder="Telefono"
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <p>Segundo Integrante</p>
+  <mat-form-field appearance="fill" class="mediumContainer">
+    <mat-label>Nombre Completo</mat-label>
+    <input
+      matInput
+      placeholder="Nombres y Apellidos"
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Identificacion</mat-label>
+    <mat-select [formControl]="idControl" required>
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let id of ids" [value]="id">
+        {{ id.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="idControl.hasError('required')"
+      >Elige una Opcion</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Documento</mat-label>
+    <input matInput placeholder="" formControlName="generalCtrl" required />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="mediumContainer">
+    <mat-label>Programa Academico</mat-label>
+    <input
+      matInput
+      placeholder="programa inscrito"
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Nro Creditos Academicos</mat-label>
+    <input
+      type="number"
+      matInput
+      placeholder=""
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="mediumContainer">
+    <mat-label>Correo</mat-label>
+    <input
+      type="email"
+      matInput
+      placeholder="@unicesar.edu.co"
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Telefono</mat-label>
+    <input
+      matInput
+      placeholder="Telefono"
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <p>Tercer Integrante</p>
+  <mat-form-field appearance="fill" class="mediumContainer">
+    <mat-label>Nombre Completo</mat-label>
+    <input
+      matInput
+      placeholder="Nombres y Apellidos"
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Identificacion</mat-label>
+    <mat-select [formControl]="idControl" required>
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let id of ids" [value]="id">
+        {{ id.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="idControl.hasError('required')"
+      >Elige una Opcion</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Documento</mat-label>
+    <input matInput placeholder="" formControlName="generalCtrl" required />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="mediumContainer">
+    <mat-label>Programa Academico</mat-label>
+    <input
+      matInput
+      placeholder="programa inscrito"
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Nro Creditos Academicos</mat-label>
+    <input
+      type="number"
+      matInput
+      placeholder=""
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="mediumContainer">
+    <mat-label>Correo</mat-label>
+    <input
+      type="email"
+      matInput
+      placeholder="@unicesar.edu.co"
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Telefono</mat-label>
+    <input
+      matInput
+      placeholder="Telefono"
+      formControlName="generalCtrl"
+      required
+    />
+  </mat-form-field>
+  <div>
+    <button mat-button matStepperNext>Siguiente</button>
+  </div>
+</form>

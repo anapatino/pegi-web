@@ -1,0 +1,51 @@
+<div>
+  <h3>Registrar Propuesta</h3>
+</div>
+<mat-stepper #stepper>
+  <mat-step
+    [stepControl]="generalInformationFormGroup"
+    errorMessage="Datos generales Incompletos."
+  >
+    <ng-template matStepLabel>Generalalidades</ng-template>
+    <app-general-information
+      [formGroup]="generalInformationFormGroup"
+    ></app-general-information>
+  </mat-step>
+  <mat-step
+    [stepControl]="specificInformationFormGroup"
+    errorMessage="Datos Incompletos"
+  >
+    <ng-template matStepLabel>Especificacion</ng-template>
+    <app-specific-information
+      [formGroup]="specificInformationFormGroup"
+    ></app-specific-information>
+  </mat-step>
+  <mat-step
+    [stepControl]="problemStatementFormGroup"
+    errorMessage="Datos Incompletos"
+  >
+    <ng-template matStepLabel>Planteamiento</ng-template>
+    <app-approach [formGroup]="problemStatementFormGroup"></app-approach>
+  </mat-step>
+  <mat-step
+    [stepControl]="justificationFormGroup"
+    errorMessage="Datos Incompletos"
+  >
+    <ng-template matStepLabel>Justificacion</ng-template>
+    <app-justification [formGroup]="justificationFormGroup"></app-justification>
+  </mat-step>
+  <mat-step
+    [stepControl]="objectivesFormGroup"
+    errorMessage="Datos Incompletos"
+  >
+    <ng-template matStepLabel>Objetivos</ng-template>
+    <app-objectives [formGroup]="objectivesFormGroup"></app-objectives>
+  </mat-step>
+  <mat-step
+    [stepControl]="bibliographyFormGroup"
+    errorMessage="Datos Incompletos"
+  >
+    <ng-template matStepLabel>Bibliografia</ng-template>
+    <app-bibliography [formGroup]="bibliographyFormGroup"></app-bibliography>
+  </mat-step>
+</mat-stepper>
