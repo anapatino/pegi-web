@@ -1,0 +1,44 @@
+<form [formGroup]="secondFormGroup">
+  <p>Estudios Secundarios</p>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Ins.Educativa</mat-label>
+    <input matInput placeholder="" formControlName="secondCtrl" required />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Ciudad</mat-label>
+    <input matInput placeholder="" formControlName="secondCtrl" required />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Finalizacion</mat-label>
+    <input matInput [matDatepicker]="endDateSecundary" />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="endDateSecundary"
+    ></mat-datepicker-toggle>
+    <mat-datepicker #endDateSecundary></mat-datepicker>
+  </mat-form-field>
+  <p>Estudios Universitarios</p>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Institucion Superior</mat-label>
+    <input matInput placeholder="" />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Ciudad</mat-label>
+    <input matInput placeholder="" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Finalizacion</mat-label>
+    <input matInput [matDatepicker]="endDateSuperior" />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="endDateSuperior"
+    ></mat-datepicker-toggle>
+    <mat-datepicker #endDateSuperior></mat-datepicker>
+  </mat-form-field>
+  <div>
+    <button mat-button matStepperPrevious>Anterior</button>
+    <button mat-button matStepperNext>Siguiente</button>
+  </div>
+</form>

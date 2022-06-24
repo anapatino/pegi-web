@@ -1,0 +1,61 @@
+<p>Estudios Postgrado</p>
+<mat-form-field appearance="fill" class="containerInputs">
+  <mat-label>Institucion Superior</mat-label>
+  <input matInput placeholder="" />
+</mat-form-field>
+<mat-form-field appearance="fill" class="containerInputs">
+  <mat-label>Ciudad</mat-label>
+  <input matInput placeholder="" />
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Finalizacion</mat-label>
+  <input matInput [matDatepicker]="endDatePostgraduate" />
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle
+    matSuffix
+    [for]="endDatePostgraduate"
+  ></mat-datepicker-toggle>
+  <mat-datepicker #endDatePostgraduate></mat-datepicker>
+</mat-form-field>
+<p>Experiencia Profesional</p>
+<mat-form-field appearance="fill" class="containerInputs">
+  <mat-label>Institucion Superior</mat-label>
+  <input matInput placeholder="" />
+</mat-form-field>
+<mat-form-field appearance="fill" class="containerInputs">
+  <mat-label>Ciudad</mat-label>
+  <input matInput placeholder="" />
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Finalizacion</mat-label>
+  <input matInput [matDatepicker]="endDateProfessional" />
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle
+    matSuffix
+    [for]="endDateProfessional"
+  ></mat-datepicker-toggle>
+  <mat-datepicker #endDateProfessional></mat-datepicker>
+</mat-form-field>
+<p>Experiencia Docente</p>
+<mat-form-field appearance="fill" class="containerInputs">
+  <mat-label>Institucion Superior</mat-label>
+  <input matInput placeholder="" />
+</mat-form-field>
+<mat-form-field appearance="fill" class="containerInputs">
+  <mat-label>Ciudad</mat-label>
+  <input matInput placeholder="" />
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Finalizacion</mat-label>
+  <input matInput [matDatepicker]="endDateExperience" />
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle
+    matSuffix
+    [for]="endDateExperience"
+  ></mat-datepicker-toggle>
+  <mat-datepicker #endDateExperience></mat-datepicker>
+</mat-form-field>
+<div class="information">
+  <button mat-button matStepperPrevious>Anterior</button>
+  <button mat-button matStepperNext>Siguiente</button>
+</div>

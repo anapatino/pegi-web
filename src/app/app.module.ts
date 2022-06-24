@@ -24,6 +24,8 @@ import { ProposalListComponent } from './components/dashboard/proposal/proposal-
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { PersonalInformationComponent } from './components/dashboard/cv/registerCv/personal-information/personal-information.component';
+import { EducationComponent } from './components/dashboard/cv/registerCv/education/education.component';
+import { AdditionalEducationComponent } from './components/dashboard/cv/registerCv/additional-education/additional-education.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { PersonalInformationComponent } from './components/dashboard/cv/register
     SearchProposalComponent,
     ProposalListComponent,
     PersonalInformationComponent,
+    EducationComponent,
+    AdditionalEducationComponent,
   ],
   imports: [
     BrowserModule,
