@@ -1,4 +1,4 @@
-<form [formGroup]="bibliographyFormGroup">
+<form [formGroup]="bibliographyFormGroup" class="formBibliography">
   <mat-form-field class="container" appearance="fill">
     <mat-label>Bibliografia</mat-label>
     <textarea
@@ -7,8 +7,12 @@
       formControlName="bibliographyCtrl"
     ></textarea>
   </mat-form-field>
+  <div class="supports">
+    <i class="bi bi-cloud-arrow-up"></i>
+    <a href="#">adjuntar soportes dando click</a>
+  </div>
   <div>
     <button mat-button matStepperPrevious>Anterior</button>
-    <button mat-button matStepperNext>Siguiente</button>
+    <button mat-button matStepperNext>Guardar</button>
   </div>
 </form>

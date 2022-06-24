@@ -22,6 +22,11 @@ interface ItemNode {
 
 const TREE_DATA: ItemNode[] = [
   {
+    icon: 'house-fill',
+    label: 'Principal',
+    route: 'homePage',
+  },
+  {
     icon: 'person-fill',
     label: 'Perfil',
     children: [
@@ -55,9 +60,11 @@ const TREE_DATA: ItemNode[] = [
     children: [
       {
         label: 'Registrar Proyecto',
+        route: 'registerProject',
       },
       {
         label: 'Listado de Proyectos',
+        route: 'searchProject',
       },
     ],
   },
@@ -67,6 +74,7 @@ const TREE_DATA: ItemNode[] = [
     children: [
       {
         label: 'Consultar Tutores',
+        route: 'searchAssesor',
       },
     ],
   },
@@ -76,6 +84,7 @@ const TREE_DATA: ItemNode[] = [
     children: [
       {
         label: 'Consultar Lineas',
+        route: 'searchLines',
       },
     ],
   },

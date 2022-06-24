@@ -31,6 +31,11 @@ import { ApproachComponent } from './components/dashboard/proposal/registerPropo
 import { JustificationComponent } from './components/dashboard/proposal/registerProposal/justification/justification.component';
 import { ObjectivesComponent } from './components/dashboard/proposal/registerProposal/objectives/objectives.component';
 import { BibliographyComponent } from './components/dashboard/proposal/registerProposal/bibliography/bibliography.component';
+import { RegisterProjectComponent } from './components/dashboard/project/registerProject/register-project/register-project.component';
+import { SearchProjectComponent } from './components/dashboard/project/searchProject/search-project/search-project.component';
+import { SearchAssessorComponent } from './components/dashboard/assessor/search-assessor/search-assessor.component';
+import { SearchLinesComponent } from './components/dashboard/lines/search-lines/search-lines.component';
+import { HomePageComponent } from './components/dashboard/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +56,11 @@ import { BibliographyComponent } from './components/dashboard/proposal/registerP
     JustificationComponent,
     ObjectivesComponent,
     BibliographyComponent,
+    RegisterProjectComponent,
+    SearchProjectComponent,
+    SearchAssessorComponent,
+    SearchLinesComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
