@@ -5,6 +5,7 @@
   height: 100%;
   display: grid;
   grid-template-columns: 20% 1fr;
+  background-color: $gray;
 }
 .navegation {
   padding: 20px 10px 10px 0;
@@ -27,9 +28,18 @@
 .iconUser {
   margin: 15px;
 }
+.navItems {
+  background-color: $gray;
+}
 
 .childContainer {
+  border-radius: 30px;
+  margin-top: 10px;
+  margin-right: 10px;
   height: 100%;
   overflow: auto;
   padding: 5% 5% 0 0;
+  padding-left: 6%;
+  background-color: white;
+  justify-content: center;
 }

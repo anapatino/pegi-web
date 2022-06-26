@@ -18,7 +18,11 @@
       <h6>@unicesar.edu.co</h6>
     </div>
     <nav class="nav flex-column">
-      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+      <mat-tree
+        [dataSource]="dataSource"
+        [treeControl]="treeControl"
+        class="navItems"
+      >
         <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
           <button mat-button [routerLink]="[node.route]">
             <i class="bi bi-{{ node.icon }}"> </i>
@@ -45,4 +49,3 @@
     <router-outlet></router-outlet>
   </section>
 </div>
-<footer></footer>

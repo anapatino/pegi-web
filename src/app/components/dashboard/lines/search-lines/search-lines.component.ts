@@ -7,7 +7,15 @@ export interface assesors {
   position: number;
 }
 
+interface Items {
+  name: string;
+}
+
 interface Lines {
+  name: string;
+}
+
+interface SubLines {
   name: string;
 }
 
@@ -37,13 +45,21 @@ export class SearchLinesComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name'];
   dataSource = ELEMENT_DATA;
 
-  linesControl = new FormControl<Lines | null>(null, Validators.required);
+  itemsControl = new FormControl<Items | null>(null, Validators.required);
   selectFormControl = new FormControl('', Validators.required);
-  lines: Lines[] = [
+  items: Items[] = [
     { name: 'Lineas de investigacion' },
     { name: 'Sublineas de investigacion' },
     { name: 'Areas Tematicas' },
   ];
+
+  linesControl = new FormControl<Items | null>(null, Validators.required);
+  selectLinesFormControl = new FormControl('', Validators.required);
+  lines: Lines[] = [{ name: '--' }, { name: '--' }, { name: '--' }];
+
+  subLinesControl = new FormControl<Items | null>(null, Validators.required);
+  selectSubLinesFormControl = new FormControl('', Validators.required);
+  subLines: SubLines[] = [{ name: '--' }, { name: '--' }, { name: '--' }];
 
   constructor() {}
 

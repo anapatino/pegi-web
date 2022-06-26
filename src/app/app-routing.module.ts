@@ -10,6 +10,8 @@ import { RegisterProjectComponent } from './components/dashboard/project/registe
 import { SearchProjectComponent } from './components/dashboard/project/searchProject/search-project/search-project.component';
 import { RegisterProposalComponent } from './components/dashboard/proposal/registerProposal/register-proposal/register-proposal.component';
 import { SearchProposalComponent } from './components/dashboard/proposal/search-proposal/search-proposal.component';
+import { FeedbackComponent } from './components/dashboard/researchContent/feedback/feedback.component';
+import { TableContentComponent } from './components/dashboard/researchContent/table-content/table-content.component';
 import { LoginComponent } from './components/principal/login/login.component';
 import { PrincipalComponent } from './components/principal/principal/principal.component';
 
@@ -26,9 +28,25 @@ const routes: Routes = [
       { path: 'registerCv', component: RegisterCvComponent },
       { path: 'searchCv', component: SearchCvComponent },
       { path: 'registerProposal', component: RegisterProposalComponent },
-      { path: 'searchProposal', component: SearchProposalComponent },
+      {
+        path: 'searchProposal',
+        component: SearchProposalComponent,
+        children: [
+          { path: '', redirectTo: 'table', pathMatch: 'full' },
+          { path: 'table', component: TableContentComponent },
+          { path: 'feedback', component: FeedbackComponent },
+        ],
+      },
       { path: 'registerProject', component: RegisterProjectComponent },
-      { path: 'searchProject', component: SearchProjectComponent },
+      {
+        path: 'searchProject',
+        component: SearchProjectComponent,
+        children: [
+          { path: '', redirectTo: 'table', pathMatch: 'full' },
+          { path: 'table', component: TableContentComponent },
+          { path: 'feedback', component: FeedbackComponent },
+        ],
+      },
       { path: 'searchAssesor', component: SearchAssessorComponent },
       { path: 'searchLines', component: SearchLinesComponent },
     ],

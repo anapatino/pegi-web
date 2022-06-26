@@ -36,6 +36,8 @@ import { SearchProjectComponent } from './components/dashboard/project/searchPro
 import { SearchAssessorComponent } from './components/dashboard/assessor/search-assessor/search-assessor.component';
 import { SearchLinesComponent } from './components/dashboard/lines/search-lines/search-lines.component';
 import { HomePageComponent } from './components/dashboard/home-page/home-page.component';
+import { TableContentComponent } from './components/dashboard/researchContent/table-content/table-content.component';
+import { FeedbackComponent } from './components/dashboard/researchContent/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { HomePageComponent } from './components/dashboard/home-page/home-page.co
     SearchAssessorComponent,
     SearchLinesComponent,
     HomePageComponent,
+    TableContentComponent,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,
