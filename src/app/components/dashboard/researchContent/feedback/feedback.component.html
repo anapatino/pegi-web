@@ -1,1 +1,14 @@
-<p>feedback works!</p>
+<div>
+  <h4 class="titlePrincipal">Calificacion</h4>
+</div>
+<form [formGroup]="feedbackFormGroup" class="formFeedback">
+  <mat-form-field appearance="fill" class="input">
+    <mat-label> Calificacion</mat-label>
+    <input type="number" matInput formControlName="feedbackCtrl" required />
+  </mat-form-field>
+  <mat-form-field class="containerFeedback" appearance="fill">
+    <mat-label>Retroalimentacion</mat-label>
+    <textarea matInput formControlName="feedbackCtrl" required></textarea>
+  </mat-form-field>
+  <button mat-button class="button">Guardar</button>
+</form>

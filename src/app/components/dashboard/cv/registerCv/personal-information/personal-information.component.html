@@ -53,7 +53,7 @@
       >Elige una Opcion</mat-error
     >
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Fecha Nacimiento</mat-label>
     <input matInput [matDatepicker]="dateBirth" />
     <mat-hint>MM/DD/YYYY</mat-hint>
@@ -97,6 +97,6 @@
     />
   </mat-form-field>
   <div class="information">
-    <button mat-button matStepperNext>Siguiente</button>
+    <button mat-button matStepperNext class="buttonSimple">Siguiente</button>
   </div>
 </form>

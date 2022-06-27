@@ -1,0 +1,15 @@
+@import "../../../../../utilities.scss";
+
+.titlePrincipal {
+  margin-bottom: 2rem;
+}
+.formFeedback {
+  display: flex;
+  flex-direction: column;
+}
+.containerFeedback {
+  width: 35rem;
+}
+.input {
+  width: 20rem;
+}

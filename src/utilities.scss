@@ -13,6 +13,7 @@ $gray: #e5e5e5;
   letter-spacing: 1px;
 }
 .containerInputs {
+  width: 15rem;
   margin-right: 30px;
   margin-bottom: 20px;
 }
@@ -27,4 +28,17 @@ $gray: #e5e5e5;
   width: 25rem;
   margin-right: 30px;
   margin-bottom: 20px;
+}
+.buttonSimple {
+  width: 6rem;
+  border-radius: 2rem;
+}
+.button {
+  width: 6rem;
+  border-radius: 2rem;
+}
+.button:hover {
+  color: white;
+  background-color: $lightBlue;
+  border-radius: 2rem;
 }
