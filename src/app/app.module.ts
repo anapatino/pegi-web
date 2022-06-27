@@ -38,7 +38,11 @@ import { SearchLinesComponent } from './components/dashboard/lines/search-lines/
 import { HomePageComponent } from './components/dashboard/home-page/home-page.component';
 import { TableContentComponent } from './components/dashboard/researchContent/table-content/table-content.component';
 import { FeedbackComponent } from './components/dashboard/researchContent/feedback/feedback.component';
-
+import { RegisterLinesComponent } from './components/dashboard/lines/registerLines/register-lines/register-lines.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { RegisterAssessorComponent } from './components/dashboard/assessor/register-assessor/register-assessor.component';
+import { RegisterEvaluatorsComponent } from './components/dashboard/evaluators/register-evaluators/register-evaluators.component';
+import { SearchEvaluatorsComponent } from './components/dashboard/evaluators/search-evaluators/search-evaluators.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +69,10 @@ import { FeedbackComponent } from './components/dashboard/researchContent/feedba
     HomePageComponent,
     TableContentComponent,
     FeedbackComponent,
+    RegisterLinesComponent,
+    RegisterAssessorComponent,
+    RegisterEvaluatorsComponent,
+    SearchEvaluatorsComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,6 +90,7 @@ import { FeedbackComponent } from './components/dashboard/researchContent/feedba
     MatSelectModule,
     MatTableModule,
     MatPaginatorModule,
+    MatTabsModule,
   ],
   providers: [MatNativeDateModule],
   bootstrap: [AppComponent],

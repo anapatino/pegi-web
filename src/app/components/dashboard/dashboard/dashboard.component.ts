@@ -73,6 +73,10 @@ const TREE_DATA: ItemNode[] = [
     label: 'Asesores',
     children: [
       {
+        label: 'Registrar Tutores',
+        route: 'registerAssesor',
+      },
+      {
         label: 'Consultar Tutores',
         route: 'searchAssesor',
       },
@@ -83,8 +87,26 @@ const TREE_DATA: ItemNode[] = [
     label: 'Lineas de Investigacion',
     children: [
       {
+        label: 'Registrar Lineas',
+        route: 'registerLines',
+      },
+      {
         label: 'Consultar Lineas',
         route: 'searchLines',
+      },
+    ],
+  },
+  {
+    icon: 'person-check-fill',
+    label: 'Evaluadores',
+    children: [
+      {
+        label: 'Registrar Evaluadores',
+        route: 'registerEvaluators',
+      },
+      {
+        label: 'Consultar Evaluadores ',
+        route: 'searchEvaluators',
       },
     ],
   },

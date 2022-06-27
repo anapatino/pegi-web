@@ -10,14 +10,10 @@ interface SubLines {
   name: string;
 }
 
-interface Areas {
-  name: string;
-}
-
 @Component({
-  selector: 'app-specific-information',
-  templateUrl: './specific-information.component.html',
-  styleUrls: ['./specific-information.component.scss'],
+  selector: 'app-register-lines',
+  templateUrl: './register-lines.component.html',
+  styleUrls: ['./register-lines.component.scss'],
   providers: [
     {
       provide: STEPPER_GLOBAL_OPTIONS,
@@ -25,11 +21,7 @@ interface Areas {
     },
   ],
 })
-export class SpecificInformationComponent implements OnInit {
-  specificInformationFormGroup = this._formBuilder.group({
-    specifiCtrl: ['', Validators.required],
-  });
-
+export class RegisterLinesComponent implements OnInit {
   linesControl = new FormControl<Lines | null>(null, Validators.required);
   selectLinesFormControl = new FormControl('', Validators.required);
   lines: Lines[] = [{ name: '--' }, { name: '--' }, { name: '--' }];
@@ -38,9 +30,17 @@ export class SpecificInformationComponent implements OnInit {
   selectSubLinesFormControl = new FormControl('', Validators.required);
   subLines: SubLines[] = [{ name: '--' }, { name: '--' }, { name: '--' }];
 
-  areasControl = new FormControl<Areas | null>(null, Validators.required);
-  selectAreasFormControl = new FormControl('', Validators.required);
-  areas: Areas[] = [{ name: '--' }, { name: '--' }, { name: '--' }];
+  linesFormGroup = this._formBuilder.group({
+    linesCtrl: ['', Validators.required],
+  });
+
+  subLinesFormGroup = this._formBuilder.group({
+    subLinesCtrl: ['', Validators.required],
+  });
+
+  areasFormGroup = this._formBuilder.group({
+    areasCtrl: ['', Validators.required],
+  });
 
   constructor(private _formBuilder: FormBuilder) {}
 

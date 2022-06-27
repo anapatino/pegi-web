@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RegisterAssessorComponent } from './components/dashboard/assessor/register-assessor/register-assessor.component';
 import { SearchAssessorComponent } from './components/dashboard/assessor/search-assessor/search-assessor.component';
 import { RegisterCvComponent } from './components/dashboard/cv/registerCv/register-cv/register-cv.component';
 import { SearchCvComponent } from './components/dashboard/cv/search-cv/search-cv.component';
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
+import { RegisterEvaluatorsComponent } from './components/dashboard/evaluators/register-evaluators/register-evaluators.component';
+import { SearchEvaluatorsComponent } from './components/dashboard/evaluators/search-evaluators/search-evaluators.component';
 import { HomePageComponent } from './components/dashboard/home-page/home-page.component';
+import { RegisterLinesComponent } from './components/dashboard/lines/registerLines/register-lines/register-lines.component';
 import { SearchLinesComponent } from './components/dashboard/lines/search-lines/search-lines.component';
 import { RegisterProjectComponent } from './components/dashboard/project/registerProject/register-project/register-project.component';
 import { SearchProjectComponent } from './components/dashboard/project/searchProject/search-project/search-project.component';
@@ -47,8 +51,12 @@ const routes: Routes = [
           { path: 'feedback', component: FeedbackComponent },
         ],
       },
+      { path: 'registerAssesor', component: RegisterAssessorComponent },
       { path: 'searchAssesor', component: SearchAssessorComponent },
+      { path: 'registerLines', component: RegisterLinesComponent },
       { path: 'searchLines', component: SearchLinesComponent },
+      { path: 'registerEvaluators', component: RegisterEvaluatorsComponent },
+      { path: 'searchEvaluators', component: SearchEvaluatorsComponent },
     ],
   },
 ];

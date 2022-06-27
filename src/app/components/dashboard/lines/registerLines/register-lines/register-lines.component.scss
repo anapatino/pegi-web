@@ -1,0 +1,18 @@
+@import "../../../../../../utilities.scss";
+
+.titleLines {
+  margin-bottom: 3rem;
+}
+
+.controllers {
+  display: flex;
+  flex-direction: column;
+}
+h5 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.containerButtons {
+  width: 15rem;
+}
