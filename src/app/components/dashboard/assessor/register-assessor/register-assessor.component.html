@@ -1,1 +1,54 @@
-<p>register-assessor works!</p>
+<div class="titleAsessor">
+  <h4>Registrar Asesores</h4>
+  <p class="text">
+    Para registrar un docente como tutor es necesario que este haya ingresado su
+    hoja de vida en el sistema.
+  </p>
+</div>
+<form [formGroup]="registerAssesorFormGroup">
+  <mat-form-field appearance="fill" class="mediumContainer">
+    <mat-label>Docente</mat-label>
+    <mat-select [formControl]="asessorsControl" required>
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let item of asessors" [value]="item">
+        {{ item.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="asessorsControl.hasError('required')"
+      >Elige una Opcion</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Disponibilidad</mat-label>
+    <mat-select [formControl]="availableControl" required>
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let available of availables" [value]="available">
+        {{ available.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="availableControl.hasError('required')"
+      >Elige una Opcion</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="">
+    <mat-label>Asesorias</mat-label>
+    <input
+      matInput
+      placeholder="Bloque - Salon"
+      formControlName="asessorCtrl"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="containerInputs">
+    <mat-label>Hora</mat-label>
+    <input
+      matInput
+      placeholder="Ej. 2:30 PM"
+      formControlName="asessorCtrl"
+      required
+    />
+  </mat-form-field>
+  <div>
+    <button mat-button class="button">Guardar</button>
+  </div>
+</form>

@@ -36,7 +36,7 @@ const routes: Routes = [
         path: 'searchProposal',
         component: SearchProposalComponent,
         children: [
-          { path: '', redirectTo: 'feedback', pathMatch: 'full' },
+          { path: '', redirectTo: 'table', pathMatch: 'full' },
           { path: 'table', component: TableContentComponent },
           { path: 'feedback', component: FeedbackComponent },
         ],
