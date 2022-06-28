@@ -3,31 +3,38 @@
     <img class="geometric" src="/assets/images/pictureLog.png" />
   </div>
   <section class="introduction">
-    <h1>Iniciar sesion</h1>
-    <div class="form-floating margin">
-      <input
-        type="email"
-        class="form-control"
-        id="floatingInput"
-        placeholder="name@example.com"
-      />
-      <label for="floatingInput">Usuario</label>
-    </div>
-    <div class="form-floating margin">
-      <input
-        type="password"
-        class="form-control"
-        id="floatingPassword"
-        placeholder="Password"
-      />
-      <label for="floatingPassword">Constraseña</label>
-    </div>
-    <select class="form-select margin" aria-label="Default select example">
-      <option selected>Seleccione su Rol</option>
-      <option value="1">Estudiante</option>
-      <option value="2">Docente</option>
-      <option value="3">Comite</option>
-    </select>
+    <h1 class="titleLogin">Iniciar sesion</h1>
+    <form [formGroup]="generalInformationFormGroup" class="formLogin">
+      <mat-form-field appearance="legacy" class="mediumContainer">
+        <mat-label>Usuario</mat-label>
+        <input matInput formControlName="generalCtrl" required />
+      </mat-form-field>
+      <mat-form-field appearance="legacy" class="mediumContainer">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field appearance="legacy" class="mediumContainer">
+        <mat-label>Docente</mat-label>
+        <mat-select [formControl]="rolesControl" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let rol of roles" [value]="rol">
+            {{ rol.name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="rolesControl.hasError('required')"
+          >Elige una Opcion</mat-error
+        >
+      </mat-form-field>
+    </form>
     <button type="button" class="btn btn-secondary" (click)="principal()">
       Regresar
     </button>
