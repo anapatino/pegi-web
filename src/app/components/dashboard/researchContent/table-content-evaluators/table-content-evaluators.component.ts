@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
-import { Router } from '@angular/router';
 
 interface Items {
   name: string;
@@ -12,51 +11,51 @@ export interface project {
   position: number;
   status: string;
   view: string;
-  feedback: string;
+  score: string;
 }
 
 const ELEMENT_DATA: project[] = [
   {
     position: 1,
     name: 'Investigacion de Grillos',
-    status: 'pendiente',
+    status: 'Pendiente',
     view: 'grip-vertical',
-    feedback: 'archive',
+    score: 'clipboard-check',
   },
   {
     position: 2,
     name: 'Helium',
-    status: 'pendiente',
+    status: 'Pendiente',
     view: 'grip-vertical',
-    feedback: 'archive',
+    score: 'clipboard-check',
   },
   {
     position: 3,
     name: 'Lithium',
-    status: 'calificada con arreglos',
+    status: 'Aprobada',
     view: 'grip-vertical',
-    feedback: 'archive',
+    score: 'clipboard-check',
   },
   {
     position: 4,
     name: 'Beryllium',
-    status: 'pendiente',
+    status: 'Pendiente',
     view: 'grip-vertical',
-    feedback: 'archive',
+    score: 'clipboard-check',
   },
   {
     position: 5,
     name: 'Boron',
-    status: 'calificada',
+    status: 'Aprobada',
     view: 'grip-vertical',
-    feedback: 'archive',
+    score: 'clipboard-check',
   },
 ];
 
 @Component({
-  selector: 'app-table-content',
-  templateUrl: './table-content.component.html',
-  styleUrls: ['./table-content.component.scss'],
+  selector: 'app-table-content-evaluators',
+  templateUrl: './table-content-evaluators.component.html',
+  styleUrls: ['./table-content-evaluators.component.scss'],
   providers: [
     {
       provide: STEPPER_GLOBAL_OPTIONS,
@@ -64,34 +63,15 @@ const ELEMENT_DATA: project[] = [
     },
   ],
 })
-export class TableContentComponent implements OnInit {
-  displayedColumns: string[] = [
-    'position',
-    'name',
-    'status',
-    'view',
-    'feedback',
-  ];
+export class TableContentEvaluatorsComponent implements OnInit {
+  displayedColumns: string[] = ['position', 'name', 'status', 'view', 'score'];
   dataSource = ELEMENT_DATA;
 
   itemsControl = new FormControl<Items | null>(null, Validators.required);
   selectFormControl = new FormControl('', Validators.required);
   items: Items[] = [{ name: 'Titulo' }, { name: 'Estado' }];
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {}
-
-  viewInformation(): void {
-    /*-->validar en que componente padre estoy<---
-    this.router.navigate(['/dashboard/searchProposal/registerProposal']);
-    this.router.navigate(['/dashboard/searchProject/registerProject']);*/
-  }
-
-  viewFeedback(): void {
-    /*-->validar en que componente padre estoy<---
-    this.router.navigate(['/dashboard/searchProposal/feedback']);
-     this.router.navigate(['/dashboard/searchProject/feedback']);
-    */
-  }
 }

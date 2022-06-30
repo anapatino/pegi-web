@@ -15,6 +15,7 @@ import { SearchProjectComponent } from './components/dashboard/project/searchPro
 import { RegisterProposalComponent } from './components/dashboard/proposal/registerProposal/register-proposal/register-proposal.component';
 import { SearchProposalComponent } from './components/dashboard/proposal/search-proposal/search-proposal.component';
 import { FeedbackComponent } from './components/dashboard/researchContent/feedback/feedback.component';
+import { TableContentEvaluatorsComponent } from './components/dashboard/researchContent/table-content-evaluators/table-content-evaluators.component';
 import { TableContentComponent } from './components/dashboard/researchContent/table-content/table-content.component';
 import { LoginComponent } from './components/principal/login/login.component';
 import { PrincipalComponent } from './components/principal/principal/principal.component';
@@ -39,6 +40,11 @@ const routes: Routes = [
           { path: '', redirectTo: 'table', pathMatch: 'full' },
           { path: 'table', component: TableContentComponent },
           { path: 'feedback', component: FeedbackComponent },
+          {
+            path: 'tableEvaluators',
+            component: TableContentEvaluatorsComponent,
+          },
+          { path: 'registerProposal', component: RegisterProposalComponent },
         ],
       },
       { path: 'registerProject', component: RegisterProjectComponent },
@@ -49,6 +55,11 @@ const routes: Routes = [
           { path: '', redirectTo: 'table', pathMatch: 'full' },
           { path: 'table', component: TableContentComponent },
           { path: 'feedback', component: FeedbackComponent },
+          {
+            path: 'tableEvaluators',
+            component: TableContentEvaluatorsComponent,
+          },
+          { path: 'registerProject', component: RegisterProjectComponent },
         ],
       },
       { path: 'registerAssesor', component: RegisterAssessorComponent },

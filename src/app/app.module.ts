@@ -43,6 +43,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { RegisterAssessorComponent } from './components/dashboard/assessor/register-assessor/register-assessor.component';
 import { RegisterEvaluatorsComponent } from './components/dashboard/evaluators/register-evaluators/register-evaluators.component';
 import { SearchEvaluatorsComponent } from './components/dashboard/evaluators/search-evaluators/search-evaluators.component';
+import { SearchProposalEvaluatorsComponent } from './components/dashboard/proposal/search-proposal-evaluators/search-proposal-evaluators.component';
+import { TableContentEvaluatorsComponent } from './components/dashboard/researchContent/table-content-evaluators/table-content-evaluators.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +75,8 @@ import { SearchEvaluatorsComponent } from './components/dashboard/evaluators/sea
     RegisterAssessorComponent,
     RegisterEvaluatorsComponent,
     SearchEvaluatorsComponent,
+    SearchProposalEvaluatorsComponent,
+    TableContentEvaluatorsComponent,
   ],
   imports: [
     BrowserModule,
