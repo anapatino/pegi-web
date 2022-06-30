@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface assesors {
   name: string;
@@ -61,7 +62,11 @@ export class SearchAssessorComponent implements OnInit {
   ];
   dataSource = ELEMENT_DATA;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  updateAsessors(): void {
+    this.router.navigate(['/dashboard/registerAssesor']);
+  }
 }

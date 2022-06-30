@@ -34,4 +34,6 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 </div>
-<button mat-button class="buttonSimple">Modificar</button>
+<button mat-button class="buttonSimple" (click)="updateAsessors()">
+  Modificar
+</button>

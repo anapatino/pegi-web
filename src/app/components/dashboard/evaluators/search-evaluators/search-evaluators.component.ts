@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface Evaluator {
   name: string;
@@ -33,7 +34,11 @@ export class SearchEvaluatorsComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'availability'];
   dataSource = ELEMENT_DATA;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  updateEvaluators(): void {
+    this.router.navigate(['/dashboard/registerEvaluators']);
+  }
 }
