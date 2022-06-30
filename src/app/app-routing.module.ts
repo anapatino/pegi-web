@@ -15,10 +15,13 @@ import { SearchProjectComponent } from './components/dashboard/project/searchPro
 import { RegisterProposalComponent } from './components/dashboard/proposal/registerProposal/register-proposal/register-proposal.component';
 import { SearchProposalComponent } from './components/dashboard/proposal/search-proposal/search-proposal.component';
 import { FeedbackComponent } from './components/dashboard/researchContent/feedback/feedback.component';
-import { TableContentEvaluatorsComponent } from './components/dashboard/researchContent/table-content-evaluators/table-content-evaluators.component';
-import { TableContentComponent } from './components/dashboard/researchContent/table-content/table-content.component';
+import { TableContentEvaluatorsComponent } from './components/dashboard/researchContent/evaluators/table-content-evaluators/table-content-evaluators.component';
+import { TableContentComponent } from './components/dashboard/researchContent/students/table-content/table-content.component';
 import { LoginComponent } from './components/principal/login/login.component';
 import { PrincipalComponent } from './components/principal/principal/principal.component';
+import { TableContentProjectComponent } from './components/dashboard/researchContent/students/table-content-project/table-content-project.component';
+import { TableContentEvaluatorsProjectComponent } from './components/dashboard/researchContent/evaluators/table-content-evaluators-project/table-content-evaluators-project.component';
+import { FeedbackProjectComponent } from './components/dashboard/researchContent/feedback-project/feedback-project.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'principal', pathMatch: 'full' },
@@ -37,7 +40,7 @@ const routes: Routes = [
         path: 'searchProposal',
         component: SearchProposalComponent,
         children: [
-          { path: '', redirectTo: 'table', pathMatch: 'full' },
+          { path: '', redirectTo: 'tableEvaluators', pathMatch: 'full' },
           { path: 'table', component: TableContentComponent },
           { path: 'feedback', component: FeedbackComponent },
           {
@@ -52,12 +55,12 @@ const routes: Routes = [
         path: 'searchProject',
         component: SearchProjectComponent,
         children: [
-          { path: '', redirectTo: 'table', pathMatch: 'full' },
-          { path: 'table', component: TableContentComponent },
-          { path: 'feedback', component: FeedbackComponent },
+          { path: '', redirectTo: 'tableEvaluatorsProject', pathMatch: 'full' },
+          { path: 'tableProject', component: TableContentProjectComponent },
+          { path: 'feedbackProject', component: FeedbackProjectComponent },
           {
-            path: 'tableEvaluators',
-            component: TableContentEvaluatorsComponent,
+            path: 'tableEvaluatorsProject',
+            component: TableContentEvaluatorsProjectComponent,
           },
           { path: 'registerProject', component: RegisterProjectComponent },
         ],
