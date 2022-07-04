@@ -1,11 +1,41 @@
 <p>Estudios Postgrado</p>
-<mat-form-field appearance="fill" class="containerInputs">
+<mat-form-field appearance="fill" class="mediumMaxContainer">
   <mat-label>Institucion Superior</mat-label>
   <input matInput placeholder="" />
 </mat-form-field>
 <mat-form-field appearance="fill" class="containerInputs">
+  <mat-label>Departamento</mat-label>
+  <mat-select [formControl]="departmentControl" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let department of departments" [value]="department">
+      {{ department.name }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="departmentControl.hasError('required')"
+    >Elige una Opcion</mat-error
+  >
+</mat-form-field>
+<mat-form-field appearance="fill" class="containerInputs">
   <mat-label>Ciudad</mat-label>
-  <input matInput placeholder="" />
+  <mat-select [formControl]="cityControl" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let city of cities" [value]="city">
+      {{ city.name }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="cityControl.hasError('required')"
+    >Elige una Opcion</mat-error
+  >
+</mat-form-field>
+<mat-form-field appearance="fill" class="containerInputs">
+  <mat-label>Inicio</mat-label>
+  <input matInput [matDatepicker]="startDateProfessional" />
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle
+    matSuffix
+    [for]="startDateProfessional"
+  ></mat-datepicker-toggle>
+  <mat-datepicker #startDateProfessional></mat-datepicker>
 </mat-form-field>
 <mat-form-field appearance="fill">
   <mat-label>Finalizacion</mat-label>
@@ -18,15 +48,45 @@
   <mat-datepicker #endDatePostgraduate></mat-datepicker>
 </mat-form-field>
 <p>Experiencia Profesional</p>
-<mat-form-field appearance="fill" class="containerInputs">
+<mat-form-field appearance="fill" class="mediumMaxContainer">
   <mat-label>Institucion Superior</mat-label>
   <input matInput placeholder="" />
 </mat-form-field>
 <mat-form-field appearance="fill" class="containerInputs">
-  <mat-label>Ciudad</mat-label>
-  <input matInput placeholder="" />
+  <mat-label>Departamento</mat-label>
+  <mat-select [formControl]="departmentControl" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let department of departments" [value]="department">
+      {{ department.name }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="departmentControl.hasError('required')"
+    >Elige una Opcion</mat-error
+  >
 </mat-form-field>
-<mat-form-field appearance="fill">
+<mat-form-field appearance="fill" class="containerInputs">
+  <mat-label>Ciudad</mat-label>
+  <mat-select [formControl]="cityControl" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let city of cities" [value]="city">
+      {{ city.name }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="cityControl.hasError('required')"
+    >Elige una Opcion</mat-error
+  >
+</mat-form-field>
+<mat-form-field appearance="fill" class="containerInputs">
+  <mat-label>Inicio</mat-label>
+  <input matInput [matDatepicker]="startDateProfessional" />
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle
+    matSuffix
+    [for]="startDateProfessional"
+  ></mat-datepicker-toggle>
+  <mat-datepicker #startDateProfessional></mat-datepicker>
+</mat-form-field>
+<mat-form-field appearance="fill" class="containerInputs">
   <mat-label>Finalizacion</mat-label>
   <input matInput [matDatepicker]="endDateProfessional" />
   <mat-hint>MM/DD/YYYY</mat-hint>
@@ -37,15 +97,45 @@
   <mat-datepicker #endDateProfessional></mat-datepicker>
 </mat-form-field>
 <p>Experiencia Docente</p>
-<mat-form-field appearance="fill" class="containerInputs">
+<mat-form-field appearance="fill" class="mediumMaxContainer">
   <mat-label>Institucion Superior</mat-label>
   <input matInput placeholder="" />
 </mat-form-field>
 <mat-form-field appearance="fill" class="containerInputs">
-  <mat-label>Ciudad</mat-label>
-  <input matInput placeholder="" />
+  <mat-label>Departamento</mat-label>
+  <mat-select [formControl]="departmentControl" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let department of departments" [value]="department">
+      {{ department.name }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="departmentControl.hasError('required')"
+    >Elige una Opcion</mat-error
+  >
 </mat-form-field>
-<mat-form-field appearance="fill">
+<mat-form-field appearance="fill" class="containerInputs">
+  <mat-label>Ciudad</mat-label>
+  <mat-select [formControl]="cityControl" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let city of cities" [value]="city">
+      {{ city.name }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="cityControl.hasError('required')"
+    >Elige una Opcion</mat-error
+  >
+</mat-form-field>
+<mat-form-field appearance="fill" class="containerInputs">
+  <mat-label>Inicio</mat-label>
+  <input matInput [matDatepicker]="startDateProfessional" />
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle
+    matSuffix
+    [for]="startDateProfessional"
+  ></mat-datepicker-toggle>
+  <mat-datepicker #startDateProfessional></mat-datepicker>
+</mat-form-field>
+<mat-form-field appearance="fill" class="containerInputs">
   <mat-label>Finalizacion</mat-label>
   <input matInput [matDatepicker]="endDateExperience" />
   <mat-hint>MM/DD/YYYY</mat-hint>
