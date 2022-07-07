@@ -4,6 +4,7 @@
     <mat-label>Titulo</mat-label>
     <input
       matInput
+      [(ngModel)]="generalRequest.title"
       placeholder="Titulo de la Propuesta"
       formControlName="generalCtrl"
       id="title"
@@ -12,7 +13,11 @@
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Fecha</mat-label>
-    <input matInput [matDatepicker]="startDate" />
+    <input
+      matInput
+      [matDatepicker]="startDate"
+      [(ngModel)]="generalRequest.dateTime"
+    />
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
     <mat-datepicker #startDate></mat-datepicker>
@@ -23,6 +28,7 @@
     <input
       matInput
       placeholder="Nombres y Apellidos"
+      [(ngModel)]="member1Request.name"
       formControlName="generalCtrl"
       id="firstMemberName"
       required
@@ -30,7 +36,11 @@
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Identificacion</mat-label>
-    <mat-select [formControl]="idControl" required>
+    <mat-select
+      [formControl]="idControl"
+      [(ngModel)]="member1Request.identificationType"
+      required
+    >
       <mat-option>--</mat-option>
       <mat-option *ngFor="let id of ids" [value]="id">
         {{ id.name }}
@@ -44,6 +54,7 @@
     <mat-label>Documento</mat-label>
     <input
       matInput
+      [(ngModel)]="member1Request.document"
       id="identificationFirstMember"
       placeholder=""
       formControlName="generalCtrl"
@@ -52,7 +63,11 @@
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Programa Academico</mat-label>
-    <mat-select [formControl]="programControl" required>
+    <mat-select
+      [formControl]="programControl"
+      [(ngModel)]="member1Request.programCode"
+      required
+    >
       <mat-option>--</mat-option>
       <mat-option *ngFor="let program of programs" [value]="program">
         {{ program.name }}
@@ -66,6 +81,7 @@
     <mat-label>Nro Creditos </mat-label>
     <input
       type="number"
+      [(ngModel)]="member1Request.creditNumber"
       id="creditFirstMember"
       matInput
       placeholder=""
@@ -77,6 +93,7 @@
     <mat-label>Correo</mat-label>
     <input
       type="email"
+      [(ngModel)]="member1Request.mail"
       id="mailFirstMember"
       matInput
       placeholder="@unicesar.edu.co"
@@ -89,6 +106,7 @@
     <input
       matInput
       id="phoneFirstMember"
+      [(ngModel)]="member1Request.phone"
       placeholder="Telefono"
       formControlName="generalCtrl"
       required
@@ -99,6 +117,7 @@
     <mat-label>Nombre Completo</mat-label>
     <input
       matInput
+      [(ngModel)]="member2Request.name"
       id="secondMemberName"
       placeholder="Nombres y Apellidos"
       formControlName="generalCtrl"
@@ -107,7 +126,11 @@
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Identificacion</mat-label>
-    <mat-select [formControl]="idControl" required>
+    <mat-select
+      [formControl]="idControl"
+      [(ngModel)]="member2Request.identificationType"
+      required
+    >
       <mat-option>--</mat-option>
       <mat-option *ngFor="let id of ids" [value]="id">
         {{ id.name }}
@@ -121,6 +144,7 @@
     <mat-label>Documento</mat-label>
     <input
       matInput
+      [(ngModel)]="member2Request.document"
       id="documentSecondMember"
       placeholder=""
       formControlName="generalCtrl"
@@ -129,7 +153,11 @@
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Programa Academico</mat-label>
-    <mat-select [formControl]="programControl" required>
+    <mat-select
+      [formControl]="programControl"
+      [(ngModel)]="member2Request.programCode"
+      required
+    >
       <mat-option>--</mat-option>
       <mat-option *ngFor="let program of programs" [value]="program">
         {{ program.name }}
@@ -143,6 +171,7 @@
     <mat-label>Nro Creditos </mat-label>
     <input
       type="number"
+      [(ngModel)]="member2Request.creditNumber"
       id="creditSecondMember"
       matInput
       placeholder=""
@@ -154,6 +183,7 @@
     <mat-label>Correo</mat-label>
     <input
       type="email"
+      [(ngModel)]="member2Request.mail"
       id="mailSecondMember"
       matInput
       placeholder="@unicesar.edu.co"
@@ -165,6 +195,7 @@
     <mat-label>Telefono</mat-label>
     <input
       matInput
+      [(ngModel)]="member2Request.phone"
       id="phoneSecondMember"
       placeholder="Telefono"
       formControlName="generalCtrl"
@@ -176,6 +207,7 @@
     <mat-label>Nombre Completo</mat-label>
     <input
       matInput
+      [(ngModel)]="member3Request.name"
       id="thirdMemberName"
       placeholder="Nombres y Apellidos"
       formControlName="generalCtrl"
@@ -184,7 +216,11 @@
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Identificacion</mat-label>
-    <mat-select [formControl]="idControl" required>
+    <mat-select
+      [formControl]="idControl"
+      [(ngModel)]="member3Request.identificationType"
+      required
+    >
       <mat-option>--</mat-option>
       <mat-option *ngFor="let id of ids" [value]="id">
         {{ id.name }}
@@ -198,6 +234,7 @@
     <mat-label>Documento</mat-label>
     <input
       matInput
+      [(ngModel)]="member3Request.document"
       id="documentThirdMember"
       placeholder=""
       formControlName="generalCtrl"
@@ -206,7 +243,11 @@
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Programa Academico</mat-label>
-    <mat-select [formControl]="programControl" required>
+    <mat-select
+      [formControl]="programControl"
+      [(ngModel)]="member3Request.programCode"
+      required
+    >
       <mat-option>--</mat-option>
       <mat-option *ngFor="let program of programs" [value]="program">
         {{ program.name }}
@@ -220,6 +261,7 @@
     <mat-label>Nro Creditos </mat-label>
     <input
       type="number"
+      [(ngModel)]="member3Request.creditNumber"
       id="creditThirdMember"
       matInput
       placeholder=""
@@ -231,6 +273,7 @@
     <mat-label>Correo</mat-label>
     <input
       type="email"
+      [(ngModel)]="member3Request.mail"
       id="mailThirdMember"
       matInput
       placeholder="@unicesar.edu.co"
@@ -242,6 +285,7 @@
     <mat-label>Telefono</mat-label>
     <input
       matInput
+      [(ngModel)]="member3Request.phone"
       id="phoneThirdMember"
       placeholder="Telefono"
       formControlName="generalCtrl"

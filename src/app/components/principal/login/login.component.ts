@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+import { emptyCreateLogin, Login } from './models/auth';
+import { AuthService } from './services/auth.service';
+import { catchError, of } from 'rxjs';
 
 interface Roles {
   name: string;
@@ -21,24 +24,30 @@ interface Roles {
 export class LoginComponent implements OnInit {
   hide = true;
 
-  generalInformationFormGroup = this._formBuilder.group({
-    generalCtrl: ['', Validators.required],
-  });
+  login: Login = { ...emptyCreateLogin };
 
-  rolesControl = new FormControl<Roles | null>(null, Validators.required);
-  selectFormControl = new FormControl('', Validators.required);
-  roles: Roles[] = [
-    { name: 'Estudiante' },
-    { name: 'Docente' },
-    { name: 'Comite Evaluativo' },
-  ];
+  userNameControl = new FormControl<string>(
+    this.login.name,
+    Validators.required
+  );
 
-  constructor(private router: Router, private _formBuilder: FormBuilder) {}
+  userPasswordControl = new FormControl<string>(
+    this.login.password,
+    Validators.required
+  );
+
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {}
 
   verifyUser(): void {
-    this.router.navigate(['/dashboard']);
+    this.authService.login(this.login).subscribe(
+      (resp) => {
+        if (!resp.hasErrors) this.router.navigate(['/dashboard']);
+        alert(resp.message);
+      },
+      (error) => alert(error.error.message)
+    );
   }
 
   principal(): void {

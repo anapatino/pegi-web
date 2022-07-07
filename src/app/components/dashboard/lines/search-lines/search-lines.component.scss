@@ -1,11 +1,6 @@
-@import "../../../../../utilities.scss";
-@import "../../researchContent/students/table-content/table-content.component.scss";
-s .table {
-  text-align: left;
-}
-
-.table th {
-  text-align: left;
+.table {
+  width: 50rem;
+  box-shadow: none;
 }
 
 .filterSublinea {
@@ -14,4 +9,8 @@ s .table {
 
 .titleLines {
   margin-bottom: 3rem;
+}
+
+.containerInputs {
+  width: 25rem;
 }

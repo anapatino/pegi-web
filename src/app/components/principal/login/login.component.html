@@ -4,14 +4,26 @@
   </div>
   <section class="introduction">
     <h1 class="titleLogin">Iniciar sesion</h1>
-    <form [formGroup]="generalInformationFormGroup" class="formLogin">
+    <form class="formLogin">
       <mat-form-field appearance="legacy" class="mediumContainer">
         <mat-label>Usuario</mat-label>
-        <input matInput id="user" formControlName="generalCtrl" required />
+        <input
+          [formControl]="userNameControl"
+          matInput
+          id="user"
+          [(ngModel)]="login.name"
+          required
+        />
       </mat-form-field>
       <mat-form-field appearance="legacy" class="mediumContainer">
         <mat-label>Contraseña</mat-label>
-        <input matInput id="password" [type]="hide ? 'password' : 'text'" />
+        <input
+          matInput
+          [formControl]="userNameControl"
+          id="password"
+          [(ngModel)]="login.password"
+          [type]="hide ? 'password' : 'text'"
+        />
         <button
           mat-icon-button
           matSuffix

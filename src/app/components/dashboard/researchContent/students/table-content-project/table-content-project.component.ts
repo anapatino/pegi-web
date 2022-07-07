@@ -85,20 +85,17 @@ export class TableContentProjectComponent implements OnInit {
   selectFormControl = new FormControl('', Validators.required);
   items: Items[] = [{ name: 'Titulo' }, { name: 'Estado' }];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   viewInformationProject(): void {
-    /*-->validar en que componente padre estoy<---
-    this.router.navigate(['/dashboard/searchProposal/registerProposal']);
-    this.router.navigate(['/dashboard/searchProject/registerProject']);*/
+    this.router.navigate(['/dashboard/searchProject/registerProject']);
   }
 
   viewFeedbackProject(): void {
-    /*-->validar en que componente padre estoy<---
-    this.router.navigate(['/dashboard/searchProposal/feedback']);
-     this.router.navigate(['/dashboard/searchProject/feedback']);
-    */
+    this.router.navigate([
+      '/dashboard/researchContent/feedback/feedbackProject',
+    ]);
   }
 }

@@ -1,34 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
-
-export interface assesors {
-  name: string;
-  position: number;
-}
-
-interface Items {
-  name: string;
-}
-
-interface Lines {
-  name: string;
-}
-
-interface SubLines {
-  name: string;
-}
-
-const ELEMENT_DATA: assesors[] = [
-  {
-    position: 1,
-    name: 'Tecnologías de la Información y la comunicación',
-  },
-  {
-    position: 2,
-    name: 'TRANSFORMACION DIGITAL',
-  },
-];
+import { CreateLine, emptyLine, LineResponse } from '../../lines/models/line';
+import {
+  CreateSubLine,
+  emptySubline,
+  SubLineResponse,
+} from '../models/subline';
+import { AreaResponse, CreateArea, emptyArea } from '../models/thematic-area';
+import { LinesService } from '../../services/lines.service';
+import { SubLinesService } from '../../services/sub-line.service';
+import { AreasService } from '../../services/thematic-areas.service';
 
 @Component({
   selector: 'app-search-lines',
@@ -42,26 +24,56 @@ const ELEMENT_DATA: assesors[] = [
   ],
 })
 export class SearchLinesComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['name'];
+  dataSource = [];
+  lines: LineResponse[] = [];
 
-  itemsControl = new FormControl<Items | null>(null, Validators.required);
-  selectFormControl = new FormControl('', Validators.required);
-  items: Items[] = [
-    { name: 'Lineas de investigacion' },
-    { name: 'Sublineas de investigacion' },
-    { name: 'Areas Tematicas' },
-  ];
+  linesControl = new FormControl<LineResponse[]>(
+    this.lines,
+    Validators.required
+  );
 
-  linesControl = new FormControl<Items | null>(null, Validators.required);
-  selectLinesFormControl = new FormControl('', Validators.required);
-  lines: Lines[] = [{ name: '--' }, { name: '--' }, { name: '--' }];
+  subLines: SubLineResponse[] = [];
 
-  subLinesControl = new FormControl<Items | null>(null, Validators.required);
-  selectSubLinesFormControl = new FormControl('', Validators.required);
-  subLines: SubLines[] = [{ name: '--' }, { name: '--' }, { name: '--' }];
+  subLinesControl = new FormControl<SubLineResponse[]>(
+    this.subLines,
+    Validators.required
+  );
 
-  constructor() {}
+  thematicAreas: AreaResponse[] = [];
 
-  ngOnInit(): void {}
+  constructor(
+    private linesService: LinesService,
+    private subLinesService: SubLinesService,
+    private thematicAreasService: AreasService
+  ) {}
+
+  ngOnInit(): void {
+    this.viewLines();
+  }
+
+  viewLines(): void {
+    this.linesService.getLines().subscribe((resp) => {
+      this.lines = resp.data;
+      this.dataSource = this.lines;
+    });
+  }
+
+  viewSubLines(lineResponse: LineResponse): void {
+    this.subLinesService
+      .getSubLineByLineCode(lineResponse.code)
+      .subscribe((resp) => {
+        this.subLines = resp.data;
+        this.dataSource = this.subLines;
+      });
+  }
+
+  viewAreas(subLineResponse: SubLineResponse): void {
+    this.thematicAreasService
+      .getThematicAreaBySubLineCode(subLineResponse.code)
+      .subscribe((resp) => {
+        this.thematicAreas = resp.data;
+        this.dataSource = this.thematicAreas;
+      });
+  }
 }

@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+import {
+  CreateProposal,
+  emptyProposal,
+  ProposalResponse,
+} from '../../models/proposal';
+import { CreateMember, emptyMember } from '../../models/Member';
 
 interface ID {
   name: string;
@@ -22,6 +28,16 @@ interface Program {
   ],
 })
 export class GeneralInformationComponent implements OnInit {
+  general: ProposalResponse[] = [];
+  generalRequest: CreateProposal = { ...emptyProposal };
+  member1Request: CreateMember = { ...emptyMember };
+  member2Request: CreateMember = { ...emptyMember };
+  member3Request: CreateMember = { ...emptyMember };
+
+  generalInformationFormGroup = this._formBuilder.group({
+    generalCtrl: ['', Validators.required],
+  });
+
   idControl = new FormControl<ID | null>(null, Validators.required);
   selectFormControl = new FormControl('', Validators.required);
   ids: ID[] = [
@@ -32,13 +48,11 @@ export class GeneralInformationComponent implements OnInit {
 
   programControl = new FormControl<Program | null>(null, Validators.required);
   selectProgramFormControl = new FormControl('', Validators.required);
-  programs: Program[] = [{ name: '-' }, { name: '-' }, { name: '-' }];
-
-  generalInformationFormGroup = this._formBuilder.group({
-    generalCtrl: ['', Validators.required],
-  });
+  programs: Program[] = [];
 
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit(): void {}
+
+  saveProposal(): void {}
 }
