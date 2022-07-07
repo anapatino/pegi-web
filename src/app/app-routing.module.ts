@@ -40,7 +40,7 @@ const routes: Routes = [
         path: 'searchProposal',
         component: SearchProposalComponent,
         children: [
-          { path: '', redirectTo: 'tableEvaluators', pathMatch: 'full' },
+          { path: '', redirectTo: 'table', pathMatch: 'full' },
           { path: 'table', component: TableContentComponent },
           { path: 'feedback', component: FeedbackComponent },
           {
@@ -55,7 +55,7 @@ const routes: Routes = [
         path: 'searchProject',
         component: SearchProjectComponent,
         children: [
-          { path: '', redirectTo: 'tableEvaluatorsProject', pathMatch: 'full' },
+          { path: '', redirectTo: 'tableProject', pathMatch: 'full' },
           { path: 'tableProject', component: TableContentProjectComponent },
           { path: 'feedbackProject', component: FeedbackProjectComponent },
           {

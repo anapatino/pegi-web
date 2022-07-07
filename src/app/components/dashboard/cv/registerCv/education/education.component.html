@@ -2,7 +2,13 @@
   <p>Estudios Secundarios</p>
   <mat-form-field appearance="fill" class="mediumMaxContainer">
     <mat-label>Ins.Educativa</mat-label>
-    <input matInput placeholder="" formControlName="secondCtrl" required />
+    <input
+      matInput
+      placeholder=""
+      formControlName="secondCtrl"
+      required
+      id="institution"
+    />
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Departamento</mat-label>
@@ -51,7 +57,7 @@
   <p>Estudios Universitarios</p>
   <mat-form-field appearance="fill" class="mediumMaxContainer">
     <mat-label>Institucion Superior</mat-label>
-    <input matInput placeholder="" />
+    <input matInput placeholder="" id="institutionUniversity" />
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Departamento</mat-label>
@@ -98,7 +104,11 @@
     <mat-datepicker #endDateEducationUniversity></mat-datepicker>
   </mat-form-field>
   <div>
-    <button mat-button matStepperPrevious class="buttonSimple">Anterior</button>
-    <button mat-button matStepperNext class="buttonSimple">Siguiente</button>
+    <button mat-button matStepperPrevious class="buttonSimple" id="last">
+      Anterior
+    </button>
+    <button mat-button matStepperNext class="buttonSimple" id="next">
+      Siguiente
+    </button>
   </div>
 </form>

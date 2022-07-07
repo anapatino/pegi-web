@@ -5,12 +5,13 @@
       matInput
       placeholder="Primer Nombre"
       formControlName="firstCtrl"
+      id="firstName"
       required
     />
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Segundo Nombre</mat-label>
-    <input matInput placeholder="Segundo Nombre" />
+    <input matInput placeholder="Segundo Nombre" id="secondName" />
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Primer Apellido</mat-label>
@@ -18,16 +19,23 @@
       matInput
       placeholder="Primer Apellido"
       formControlName="firstCtrl"
+      id="firstLastName"
       required
     />
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Segundo Apellido</mat-label>
-    <input matInput placeholder="Segundo Apellido" />
+    <input matInput placeholder="Segundo Apellido" id="secondLastName" />
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Documento</mat-label>
-    <input matInput placeholder="CC" formControlName="firstCtrl" required />
+    <input
+      matInput
+      placeholder="CC"
+      formControlName="firstCtrl"
+      required
+      id="document"
+    />
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Estado Civil</mat-label>
@@ -60,10 +68,15 @@
     <mat-datepicker-toggle matSuffix [for]="dateBirth"></mat-datepicker-toggle>
     <mat-datepicker #dateBirth></mat-datepicker>
   </mat-form-field>
-
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Pais</mat-label>
-    <input matInput placeholder="Pais" formControlName="firstCtrl" required />
+    <input
+      matInput
+      placeholder="Pais"
+      formControlName="firstCtrl"
+      required
+      id="nationality"
+    />
   </mat-form-field>
   <mat-form-field appearance="fill" class="containerInputs">
     <mat-label>Telefono</mat-label>
@@ -71,6 +84,7 @@
       matInput
       placeholder="Telefono"
       formControlName="firstCtrl"
+      id="phone"
       required
     />
   </mat-form-field>
@@ -80,10 +94,13 @@
       matInput
       placeholder="Correo Institucional"
       formControlName="firstCtrl"
+      id="institutionalMail"
       required
     />
   </mat-form-field>
   <div class="information">
-    <button mat-button matStepperNext class="buttonSimple">Siguiente</button>
+    <button mat-button matStepperNext class="buttonSimple" id="next">
+      Siguiente
+    </button>
   </div>
 </form>

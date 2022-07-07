@@ -1,7 +1,7 @@
 <p>Estudios Postgrado</p>
 <mat-form-field appearance="fill" class="mediumMaxContainer">
   <mat-label>Institucion Superior</mat-label>
-  <input matInput placeholder="" />
+  <input matInput placeholder="" id="postgraduateInstitution" />
 </mat-form-field>
 <mat-form-field appearance="fill" class="containerInputs">
   <mat-label>Departamento</mat-label>
@@ -50,7 +50,7 @@
 <p>Experiencia Profesional</p>
 <mat-form-field appearance="fill" class="mediumMaxContainer">
   <mat-label>Institucion Superior</mat-label>
-  <input matInput placeholder="" />
+  <input matInput placeholder="" id="professionalInstitution" />
 </mat-form-field>
 <mat-form-field appearance="fill" class="containerInputs">
   <mat-label>Departamento</mat-label>
@@ -99,7 +99,7 @@
 <p>Experiencia Docente</p>
 <mat-form-field appearance="fill" class="mediumMaxContainer">
   <mat-label>Institucion Superior</mat-label>
-  <input matInput placeholder="" />
+  <input matInput placeholder="" id="experienceInstitution" />
 </mat-form-field>
 <mat-form-field appearance="fill" class="containerInputs">
   <mat-label>Departamento</mat-label>
@@ -146,6 +146,10 @@
   <mat-datepicker #endDateExperience></mat-datepicker>
 </mat-form-field>
 <div class="information">
-  <button mat-button matStepperPrevious class="buttonSimple">Anterior</button>
-  <button mat-button matStepperNext class="buttonSimple">Siguiente</button>
+  <button mat-button matStepperPrevious class="buttonSimple" id="last">
+    Anterior
+  </button>
+  <button mat-button matStepperNext class="buttonSimple" id="next">
+    Siguiente
+  </button>
 </div>

@@ -1,10 +1,15 @@
 <mat-form-field appearance="fill" class="input">
   <mat-label> Calificacion</mat-label>
-  <input type="number" matInput />
+  <input type="number" matInput id="qualification" />
 </mat-form-field>
 <app-feedback></app-feedback>
 <div>
-  <button mat-button class="buttonSimple" (click)="viewTableProject()">
+  <button
+    mat-button
+    class="buttonSimple"
+    id="last"
+    (click)="viewTableProject()"
+  >
     Anterior
   </button>
 </div>

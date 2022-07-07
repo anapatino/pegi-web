@@ -4,10 +4,12 @@
     <h5>Registrar Lineas de investigacion</h5>
     <mat-form-field appearance="fill" class="titleProposal">
       <mat-label>Titulo de la Linea</mat-label>
-      <input matInput required formControlName="linesCtrl" />
+      <input matInput id="lineTitle" required formControlName="linesCtrl" />
     </mat-form-field>
     <div class="containerButtons">
-      <button mat-button class="button">Guardar</button>
+      <button mat-button class="button" id="save" (click)="saveLine()">
+        Guardar
+      </button>
     </div>
   </mat-tab>
   <mat-tab
@@ -30,10 +32,15 @@
     </mat-form-field>
     <mat-form-field appearance="fill" class="titleProposal">
       <mat-label>Titulo de la SubLinea</mat-label>
-      <input matInput required formControlName="subLinesCtrl" />
+      <input
+        matInput
+        id="sublineTitle"
+        required
+        formControlName="subLinesCtrl"
+      />
     </mat-form-field>
     <div class="containerButtons">
-      <button mat-button class="button">Guardar</button>
+      <button mat-button class="button" id="save">Guardar</button>
     </div>
   </mat-tab>
   <mat-tab
@@ -68,10 +75,15 @@
     </mat-form-field>
     <mat-form-field appearance="fill" class="titleProposal">
       <mat-label>Titulo del Area Tematica</mat-label>
-      <input matInput required formControlName="areasCtrl" />
+      <input
+        matInput
+        id="thematicAreaLine"
+        required
+        formControlName="areasCtrl"
+      />
     </mat-form-field>
     <div class="containerButtons">
-      <button mat-button class="button">Guardar</button>
+      <button mat-button class="button" id="save">Guardar</button>
     </div>
   </mat-tab>
 </mat-tab-group>

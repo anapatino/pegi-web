@@ -6,6 +6,10 @@ interface ID {
   name: string;
 }
 
+interface Program {
+  name: string;
+}
+
 @Component({
   selector: 'app-general-information',
   templateUrl: './general-information.component.html',
@@ -25,6 +29,10 @@ export class GeneralInformationComponent implements OnInit {
     { name: 'Cedula de ciudadania' },
     { name: 'Cedula de Extranjeria' },
   ];
+
+  programControl = new FormControl<Program | null>(null, Validators.required);
+  selectProgramFormControl = new FormControl('', Validators.required);
+  programs: Program[] = [{ name: '-' }, { name: '-' }, { name: '-' }];
 
   generalInformationFormGroup = this._formBuilder.group({
     generalCtrl: ['', Validators.required],

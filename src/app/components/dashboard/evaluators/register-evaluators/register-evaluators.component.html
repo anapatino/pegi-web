@@ -7,7 +7,7 @@
 </div>
 <form [formGroup]="registerEvaluatorFormGroup">
   <mat-form-field appearance="fill" class="mediumContainer">
-    <mat-label>Docente</mat-label>
+    <mat-label>Docentes</mat-label>
     <mat-select [formControl]="evaluatorsControl" required>
       <mat-option>--</mat-option>
       <mat-option *ngFor="let evaluator of evaluators" [value]="evaluator">
@@ -31,6 +31,6 @@
     >
   </mat-form-field>
   <div>
-    <button mat-button class="button">Guardar</button>
+    <button mat-button class="button" id="save">Guardar</button>
   </div>
 </form>

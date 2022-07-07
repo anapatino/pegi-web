@@ -110,6 +110,10 @@ const TREE_DATA: ItemNode[] = [
       },
     ],
   },
+  {
+    icon: 'box-arrow-in-right',
+    label: 'Salir',
+  },
 ];
 
 @Component({

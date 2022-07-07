@@ -33,6 +33,7 @@
   <mat-form-field appearance="fill" class="">
     <mat-label>Asesorias</mat-label>
     <input
+      id="support"
       matInput
       placeholder="Bloque - Salon"
       formControlName="asessorCtrl"
@@ -43,12 +44,13 @@
     <mat-label>Hora</mat-label>
     <input
       matInput
+      id="hour"
       placeholder="Ej. 2:30 PM"
       formControlName="asessorCtrl"
       required
     />
   </mat-form-field>
   <div>
-    <button mat-button class="button">Guardar</button>
+    <button mat-button class="button" id="save">Guardar</button>
   </div>
 </form>

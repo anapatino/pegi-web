@@ -38,10 +38,20 @@
   </mat-form-field>
   <mat-form-field appearance="fill" class="mediumContainer">
     <mat-label>Grupos de Investigacion</mat-label>
-    <input matInput placeholder="" formControlName="specifiCtrl" required />
+    <input
+      matInput
+      placeholder=""
+      id="investigationGroup"
+      formControlName="specifiCtrl"
+      required
+    />
   </mat-form-field>
   <div>
-    <button mat-button matStepperPrevious class="buttonSimple">Anterior</button>
-    <button mat-button matStepperNext class="buttonSimple">Siguiente</button>
+    <button mat-button matStepperPrevious class="buttonSimple" id="last">
+      Anterior
+    </button>
+    <button mat-button matStepperNext class="buttonSimple" id="next">
+      Siguiente
+    </button>
   </div>
 </form>

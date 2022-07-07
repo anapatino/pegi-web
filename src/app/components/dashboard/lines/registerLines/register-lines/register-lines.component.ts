@@ -1,14 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
-
-interface Lines {
-  name: string;
-}
-
-interface SubLines {
-  name: string;
-}
+import { CreateSubLine, SubLineResponse } from '../../models/subline';
+import { CreateLine, emptyLine, LineResponse } from '../../models/line';
+import { LinesService } from '../../../services/lines.service';
 
 @Component({
   selector: 'app-register-lines',
@@ -22,13 +17,13 @@ interface SubLines {
   ],
 })
 export class RegisterLinesComponent implements OnInit {
-  linesControl = new FormControl<Lines | null>(null, Validators.required);
-  selectLinesFormControl = new FormControl('', Validators.required);
-  lines: Lines[] = [{ name: '--' }, { name: '--' }, { name: '--' }];
+  lines: LineResponse[] = [];
+  line: CreateLine = { ...emptyLine };
 
-  subLinesControl = new FormControl<SubLines | null>(null, Validators.required);
-  selectSubLinesFormControl = new FormControl('', Validators.required);
-  subLines: SubLines[] = [{ name: '--' }, { name: '--' }, { name: '--' }];
+  linesControl = new FormControl<CreateLine>(null, Validators.required);
+  subLinesControl = new FormControl<CreateSubLine>(null, Validators.required);
+
+  subLines: SubLineResponse[] = [];
 
   linesFormGroup = this._formBuilder.group({
     linesCtrl: ['', Validators.required],
@@ -42,7 +37,14 @@ export class RegisterLinesComponent implements OnInit {
     areasCtrl: ['', Validators.required],
   });
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(
+    private _formBuilder: FormBuilder,
+    private linesService: LinesService
+  ) {}
 
   ngOnInit(): void {}
+
+  saveLine() {
+    this.linesService.saveLine(this.line);
+  }
 }

@@ -14,9 +14,14 @@
 
   <mat-form-field class="containerFeedback" appearance="fill">
     <mat-label>Retroalimentacion</mat-label>
-    <textarea matInput formControlName="feedbackCtrl" required></textarea>
+    <textarea
+      matInput
+      id="feedback"
+      formControlName="feedbackCtrl"
+      required
+    ></textarea>
   </mat-form-field>
   <div>
-    <button mat-button class="button">Guardar</button>
+    <button mat-button class="button" id="save">Guardar</button>
   </div>
 </form>

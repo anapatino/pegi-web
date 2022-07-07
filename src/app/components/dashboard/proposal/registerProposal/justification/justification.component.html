@@ -3,12 +3,17 @@
     <mat-label>Justificacion</mat-label>
     <textarea
       matInput
+      id="justification"
       placeholder=""
       formControlName="justificationCtrl"
     ></textarea>
   </mat-form-field>
   <div>
-    <button mat-button matStepperPrevious class="buttonSimple">Anterior</button>
-    <button mat-button matStepperNext class="buttonSimple">Siguiente</button>
+    <button mat-button matStepperPrevious class="buttonSimple" id="last">
+      Anterior
+    </button>
+    <button mat-button matStepperNext class="buttonSimple" id="next">
+      Siguiente
+    </button>
   </div>
 </form>

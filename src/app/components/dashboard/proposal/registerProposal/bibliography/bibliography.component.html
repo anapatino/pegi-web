@@ -3,16 +3,19 @@
     <mat-label>Bibliografia</mat-label>
     <textarea
       matInput
+      id="bibliography"
       placeholder="Ingrese Bibliografias"
       formControlName="bibliographyCtrl"
     ></textarea>
   </mat-form-field>
-  <div class="supports">
+  <div class="supports" id="supports">
     <i class="bi bi-cloud-arrow-up"></i>
     <a href="#">adjuntar soportes dando click</a>
   </div>
   <div>
-    <button mat-button matStepperPrevious class="buttonSimple">Anterior</button>
-    <button mat-button matStepperNext class="button">Guardar</button>
+    <button mat-button matStepperPrevious class="buttonSimple" id="last">
+      Anterior
+    </button>
+    <button mat-button matStepperNext class="button" id="save">Guardar</button>
   </div>
 </form>
