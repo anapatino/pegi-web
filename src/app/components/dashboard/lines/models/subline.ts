@@ -10,3 +10,8 @@ export interface SubLineResponse {
   code: number;
   thematicAreas: AreaResponse[];
 }
+
+export const emptySubline: CreateSubLine = {
+  name: '',
+  lineCode: 0,
+};
